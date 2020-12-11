@@ -1,0 +1,43 @@
+﻿@page
+@model Appointment_system_managment.Pages.patient_details.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>patient_detail</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.patient_detail.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.patient_detail.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.patient_detail.DOB)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.patient_detail.DOB)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.patient_detail.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.patient_detail.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.patient_detail.Phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.patient_detail.Phone)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.patient_detail.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

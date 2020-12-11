@@ -1,0 +1,46 @@
+﻿@page
+@model Appointment_system_managment.Pages.doctor_details.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>doctor_detail</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.doctor_detail.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.doctor_detail.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.doctor_detail.Sepicaligation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.doctor_detail.Sepicaligation)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.doctor_detail.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.doctor_detail.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.doctor_detail.Phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.doctor_detail.Phone)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="doctor_detail.ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
