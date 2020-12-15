@@ -1,5 +1,5 @@
 ﻿@page
-@model Appointment_system_managment.Pages.appointments.IndexModel
+@model Appointment_system_managment.Pages.Appointments.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -14,13 +14,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.appointment[0].Clinic_registration_no)
+                @Html.DisplayNameFor(model => model.appointment[0].clinic)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.appointment[0].Doctor_ID)
+                @Html.DisplayNameFor(model => model.appointment[0].Doctor_Detail)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.appointment[0].Patient_registration_no)
+                @Html.DisplayNameFor(model => model.appointment[0].Patient_Detail)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.appointment[0].Appointment_date_time)
@@ -32,13 +32,13 @@
 @foreach (var item in Model.appointment) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Clinic_registration_no)
+                @Html.DisplayFor(modelItem => item.clinic.Clinic_address)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Doctor_ID)
+                @Html.DisplayFor(modelItem => item.Doctor_Detail.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Patient_registration_no)
+                @Html.DisplayFor(modelItem => item.Patient_Detail.Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Appointment_date_time)

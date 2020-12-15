@@ -8,13 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using Appointment_system_managment.Data;
 using Appointment_system_managment.Models;
 
-namespace Appointment_system_managment.Pages.appointments
+namespace Appointment_system_managment.Pages.Appointments
 {
     public class IndexModel : PageModel
     {
-        private readonly Appointment_system_managment.Data.ASP _context;
+        private readonly Appointment_system_managment.Data.Appointment_system_managment_Database _context;
 
-        public IndexModel(Appointment_system_managment.Data.ASP context)
+        public IndexModel(Appointment_system_managment.Data.Appointment_system_managment_Database context)
         {
             _context = context;
         }
@@ -23,7 +23,10 @@ namespace Appointment_system_managment.Pages.appointments
 
         public async Task OnGetAsync()
         {
-            appointment = await _context.appointment.ToListAsync();
+            appointment = await _context.appointment
+                .Include(a => a.Doctor_Detail)
+                .Include(a => a.Patient_Detail)
+                .Include(a => a.clinic).ToListAsync();
         }
     }
 }

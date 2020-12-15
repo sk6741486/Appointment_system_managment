@@ -7,6 +7,10 @@
     "mssql2": {
       "type": "mssql",
       "connectionId": "ASP"
+    },
+    "mssql3": {
+      "type": "mssql",
+      "connectionId": "Appointment_system_managment_Database"
     }
   }
 }

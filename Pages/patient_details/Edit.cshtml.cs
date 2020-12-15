@@ -9,13 +9,13 @@ using Microsoft.EntityFrameworkCore;
 using Appointment_system_managment.Data;
 using Appointment_system_managment.Models;
 
-namespace Appointment_system_managment.Pages.patient_details
+namespace Appointment_system_managment.Pages.Patient_Details
 {
     public class EditModel : PageModel
     {
-        private readonly Appointment_system_managment.Data.ASP _context;
+        private readonly Appointment_system_managment.Data.Appointment_system_managment_Database _context;
 
-        public EditModel(Appointment_system_managment.Data.ASP context)
+        public EditModel(Appointment_system_managment.Data.Appointment_system_managment_Database context)
         {
             _context = context;
         }

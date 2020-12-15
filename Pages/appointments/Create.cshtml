@@ -1,5 +1,5 @@
 ﻿@page
-@model Appointment_system_managment.Pages.appointments.CreateModel
+@model Appointment_system_managment.Pages.Appointments.CreateModel
 
 @{
     ViewData["Title"] = "Create";
@@ -14,19 +14,16 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="appointment.Clinic_registration_no" class="control-label"></label>
-                <input asp-for="appointment.Clinic_registration_no" class="form-control" />
-                <span asp-validation-for="appointment.Clinic_registration_no" class="text-danger"></span>
+                <label asp-for="appointment.ClinicId" class="control-label"></label>
+                <select asp-for="appointment.ClinicId" class ="form-control" asp-items="ViewBag.ClinicId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="appointment.Doctor_ID" class="control-label"></label>
-                <input asp-for="appointment.Doctor_ID" class="form-control" />
-                <span asp-validation-for="appointment.Doctor_ID" class="text-danger"></span>
+                <label asp-for="appointment.Doctor_DetailID" class="control-label"></label>
+                <select asp-for="appointment.Doctor_DetailID" class ="form-control" asp-items="ViewBag.Doctor_DetailID"></select>
             </div>
             <div class="form-group">
-                <label asp-for="appointment.Patient_registration_no" class="control-label"></label>
-                <input asp-for="appointment.Patient_registration_no" class="form-control" />
-                <span asp-validation-for="appointment.Patient_registration_no" class="text-danger"></span>
+                <label asp-for="appointment.Patient_DetailID" class="control-label"></label>
+                <select asp-for="appointment.Patient_DetailID" class ="form-control" asp-items="ViewBag.Patient_DetailID"></select>
             </div>
             <div class="form-group">
                 <label asp-for="appointment.Appointment_date_time" class="control-label"></label>

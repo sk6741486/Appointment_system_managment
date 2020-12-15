@@ -7,6 +7,10 @@
     "mssql2": {
       "type": "mssql.local",
       "connectionId": "ASP"
+    },
+    "mssql3": {
+      "type": "mssql.local",
+      "connectionId": "Appointment_system_managment_Database"
     }
   }
 }

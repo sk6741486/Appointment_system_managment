@@ -7,9 +7,9 @@ using Appointment_system_managment.Models;
 
 namespace Appointment_system_managment.Data
 {
-    public class ASP : DbContext
+    public class Appointment_system_managment_Database : DbContext
     {
-        public ASP (DbContextOptions<ASP> options)
+        public Appointment_system_managment_Database (DbContextOptions<Appointment_system_managment_Database> options)
             : base(options)
         {
         }

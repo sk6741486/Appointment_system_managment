@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Appointment_system_managment.Data;
 
+
 namespace Appointment_system_managment
 {
     public class Startup
@@ -27,9 +28,12 @@ namespace Appointment_system_managment
         {
             services.AddRazorPages();
 
-            services.AddDbContext<ASP>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("ASP")));
+            services.AddDbContext<Appointment_system_managment_Database>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("Appointment_system_managment_Database")));
 
+           
+
+            
              }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

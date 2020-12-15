@@ -8,13 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using Appointment_system_managment.Data;
 using Appointment_system_managment.Models;
 
-namespace Appointment_system_managment.Pages.appointments
+namespace Appointment_system_managment.Pages.Appointments
 {
     public class DetailsModel : PageModel
     {
-        private readonly Appointment_system_managment.Data.ASP _context;
+        private readonly Appointment_system_managment.Data.Appointment_system_managment_Database _context;
 
-        public DetailsModel(Appointment_system_managment.Data.ASP context)
+        public DetailsModel(Appointment_system_managment.Data.Appointment_system_managment_Database context)
         {
             _context = context;
         }
@@ -28,7 +28,10 @@ namespace Appointment_system_managment.Pages.appointments
                 return NotFound();
             }
 
-            appointment = await _context.appointment.FirstOrDefaultAsync(m => m.Id == id);
+            appointment = await _context.appointment
+                .Include(a => a.Doctor_Detail)
+                .Include(a => a.Patient_Detail)
+                .Include(a => a.clinic).FirstOrDefaultAsync(m => m.Id == id);
 
             if (appointment == null)
             {
