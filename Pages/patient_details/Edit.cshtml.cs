@@ -6,16 +6,16 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Appointment_system_managment.Data.ASM;
+using Appointment_system_managment.Data;
 using Appointment_system_managment.Models;
 
 namespace Appointment_system_managment.Pages.patient_details
 {
     public class EditModel : PageModel
     {
-        private readonly Appointment_system_managment.Data.ASM.database _context;
+        private readonly Appointment_system_managment.Data.ASP _context;
 
-        public EditModel(Appointment_system_managment.Data.ASM.database context)
+        public EditModel(Appointment_system_managment.Data.ASP context)
         {
             _context = context;
         }
@@ -30,7 +30,7 @@ namespace Appointment_system_managment.Pages.patient_details
                 return NotFound();
             }
 
-            patient_detail = await _context.patient_detail.FirstOrDefaultAsync(m => m.ID == id);
+            patient_detail = await _context.patient_detail.FirstOrDefaultAsync(m => m.Id == id);
 
             if (patient_detail == null)
             {
@@ -56,7 +56,7 @@ namespace Appointment_system_managment.Pages.patient_details
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!patient_detailExists(patient_detail.ID))
+                if (!patient_detailExists(patient_detail.Id))
                 {
                     return NotFound();
                 }
@@ -71,7 +71,7 @@ namespace Appointment_system_managment.Pages.patient_details
 
         private bool patient_detailExists(int id)
         {
-            return _context.patient_detail.Any(e => e.ID == id);
+            return _context.patient_detail.Any(e => e.Id == id);
         }
     }
 }

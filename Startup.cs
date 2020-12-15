@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Appointment_system_managment.Data.ASM;
+using Appointment_system_managment.Data;
 
 namespace Appointment_system_managment
 {
@@ -27,9 +27,10 @@ namespace Appointment_system_managment
         {
             services.AddRazorPages();
 
-            services.AddDbContext<database>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("database")));
-        }
+            services.AddDbContext<ASP>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("ASP")));
+
+             }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

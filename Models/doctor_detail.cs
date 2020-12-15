@@ -10,7 +10,7 @@ namespace Appointment_system_managment.Models
     public class doctor_detail
     {
         
-        public int ID { get; set; }
+        public int Id { get; set; }
         [Required]
         public string Name { get; set; }
         public string Sepicaligation { get; set; }

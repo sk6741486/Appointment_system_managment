@@ -10,7 +10,7 @@ namespace Appointment_system_managment.Models
     public class clinic
     {
       
-        public int ID { get; set; }
+        public int Id { get; set; }
         [Required]
         public string Clinic_name { get; set; }
         [Required]

@@ -9,15 +9,15 @@ namespace Appointment_system_managment.Models
     public class appointment
     {
         
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         public int Clinic_registration_no { get; set; }
-        public clinic Obj_Clinic { get; set; }
+        public clinic clinic { get; set; }
 
         public int Doctor_ID { get; set; }
-        public doctor_detail Obj_Doctor_Details { get; set; }
+        public doctor_detail doctor_detail { get; set; }
         public int Patient_registration_no { get; set; }
-        public patient_detail Obj_Patient_detail { get; set; }
+        public patient_detail patient_detail { get; set; }
         public DateTime Appointment_date_time { get; set; }
        
     }

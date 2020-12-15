@@ -6,16 +6,16 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Appointment_system_managment.Data.ASM;
+using Appointment_system_managment.Data;
 using Appointment_system_managment.Models;
 
 namespace Appointment_system_managment.Pages.clinics
 {
     public class EditModel : PageModel
     {
-        private readonly Appointment_system_managment.Data.ASM.database _context;
+        private readonly Appointment_system_managment.Data.ASP _context;
 
-        public EditModel(Appointment_system_managment.Data.ASM.database context)
+        public EditModel(Appointment_system_managment.Data.ASP context)
         {
             _context = context;
         }
@@ -30,7 +30,7 @@ namespace Appointment_system_managment.Pages.clinics
                 return NotFound();
             }
 
-            clinic = await _context.clinic.FirstOrDefaultAsync(m => m.ID == id);
+            clinic = await _context.clinic.FirstOrDefaultAsync(m => m.Id == id);
 
             if (clinic == null)
             {
@@ -56,7 +56,7 @@ namespace Appointment_system_managment.Pages.clinics
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!clinicExists(clinic.ID))
+                if (!clinicExists(clinic.Id))
                 {
                     return NotFound();
                 }
@@ -71,7 +71,7 @@ namespace Appointment_system_managment.Pages.clinics
 
         private bool clinicExists(int id)
         {
-            return _context.clinic.Any(e => e.ID == id);
+            return _context.clinic.Any(e => e.Id == id);
         }
     }
 }

@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Appointment_system_managment.Data.ASM;
+using Appointment_system_managment.Data;
 using Appointment_system_managment.Models;
 
 namespace Appointment_system_managment.Pages.doctor_details
 {
     public class CreateModel : PageModel
     {
-        private readonly Appointment_system_managment.Data.ASM.database _context;
+        private readonly Appointment_system_managment.Data.ASP _context;
 
-        public CreateModel(Appointment_system_managment.Data.ASM.database context)
+        public CreateModel(Appointment_system_managment.Data.ASP context)
         {
             _context = context;
         }

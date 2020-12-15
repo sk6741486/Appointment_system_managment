@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using Appointment_system_managment.Data.ASM;
+using Appointment_system_managment.Data;
 using Appointment_system_managment.Models;
 
 namespace Appointment_system_managment.Pages.appointments
 {
     public class DeleteModel : PageModel
     {
-        private readonly Appointment_system_managment.Data.ASM.database _context;
+        private readonly Appointment_system_managment.Data.ASP _context;
 
-        public DeleteModel(Appointment_system_managment.Data.ASM.database context)
+        public DeleteModel(Appointment_system_managment.Data.ASP context)
         {
             _context = context;
         }
@@ -29,7 +29,7 @@ namespace Appointment_system_managment.Pages.appointments
                 return NotFound();
             }
 
-            appointment = await _context.appointment.FirstOrDefaultAsync(m => m.ID == id);
+            appointment = await _context.appointment.FirstOrDefaultAsync(m => m.Id == id);
 
             if (appointment == null)
             {

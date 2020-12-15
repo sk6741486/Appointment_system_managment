@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Appointment_system_managment.Models;
 
-namespace Appointment_system_managment.Data.ASM
+namespace Appointment_system_managment.Data
 {
-    public class database : DbContext
+    public class ASP : DbContext
     {
-        public database (DbContextOptions<database> options)
+        public ASP (DbContextOptions<ASP> options)
             : base(options)
         {
         }
