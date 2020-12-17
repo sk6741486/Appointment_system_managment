@@ -26,7 +26,7 @@ namespace Appointment_system_managment.Pages.Appointments
             appointment = await _context.appointment
                 .Include(a => a.Doctor_Detail)
                 .Include(a => a.Patient_Detail)
-                .Include(a => a.clinic).ToListAsync();
+                .Include(a => a.Clinic).ToListAsync();
         }
     }
 }

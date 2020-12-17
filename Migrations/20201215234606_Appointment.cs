@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Appointment_system_managment.Migrations
@@ -102,6 +103,9 @@ namespace Appointment_system_managment.Migrations
                 name: "IX_appointment_Patient_DetailID",
                 table: "appointment",
                 column: "Patient_DetailID");
+            var sqlFile = Path.Combine(".\\DatabaseScript", @"DBS.sql");
+
+            migrationBuilder.Sql(File.ReadAllText(sqlFile));
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

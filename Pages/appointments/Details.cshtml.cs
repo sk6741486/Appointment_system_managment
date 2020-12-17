@@ -31,7 +31,7 @@ namespace Appointment_system_managment.Pages.Appointments
             appointment = await _context.appointment
                 .Include(a => a.Doctor_Detail)
                 .Include(a => a.Patient_Detail)
-                .Include(a => a.clinic).FirstOrDefaultAsync(m => m.Id == id);
+                .Include(a => a.Clinic).FirstOrDefaultAsync(m => m.Id == id);
 
             if (appointment == null)
             {

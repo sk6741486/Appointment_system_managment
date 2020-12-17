@@ -21,9 +21,9 @@ namespace Appointment_system_managment.Pages.Appointments
 
         public IActionResult OnGet()
         {
-        ViewData["Doctor_DetailID"] = new SelectList(_context.doctor_detail, "Id", "Email");
+        ViewData["Doctor_DetailID"] = new SelectList(_context.doctor_detail, "Id", "Name");
         ViewData["Patient_DetailID"] = new SelectList(_context.patient_detail, "Id", "Name");
-        ViewData["ClinicId"] = new SelectList(_context.clinic, "Id", "Clinic_address");
+        ViewData["ClinicId"] = new SelectList(_context.clinic, "Id", "Clinic_name");
             return Page();
         }
 

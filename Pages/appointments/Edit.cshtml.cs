@@ -33,15 +33,15 @@ namespace Appointment_system_managment.Pages.Appointments
             appointment = await _context.appointment
                 .Include(a => a.Doctor_Detail)
                 .Include(a => a.Patient_Detail)
-                .Include(a => a.clinic).FirstOrDefaultAsync(m => m.Id == id);
+                .Include(a => a.Clinic).FirstOrDefaultAsync(m => m.Id == id);
 
             if (appointment == null)
             {
                 return NotFound();
             }
-           ViewData["Doctor_DetailID"] = new SelectList(_context.doctor_detail, "Id", "Email");
+           ViewData["Doctor_DetailID"] = new SelectList(_context.doctor_detail, "Id", "Name");
            ViewData["Patient_DetailID"] = new SelectList(_context.patient_detail, "Id", "Name");
-           ViewData["ClinicId"] = new SelectList(_context.clinic, "Id", "Clinic_address");
+           ViewData["ClinicId"] = new SelectList(_context.clinic, "Id", "Clinic_name");
             return Page();
         }
 

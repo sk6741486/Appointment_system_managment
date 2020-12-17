@@ -14,16 +14,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.appointment[0].clinic)
+                Clinic Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.appointment[0].Doctor_Detail)
+                Doctor Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.appointment[0].Patient_Detail)
+                Patient Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.appointment[0].Appointment_date_time)
+                Appointment Date
             </th>
             <th></th>
         </tr>
@@ -32,10 +32,10 @@
 @foreach (var item in Model.appointment) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.clinic.Clinic_address)
+                @Html.DisplayFor(modelItem => item.Clinic.Clinic_name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Doctor_Detail.Email)
+                @Html.DisplayFor(modelItem => item.Doctor_Detail.Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Patient_Detail.Name)

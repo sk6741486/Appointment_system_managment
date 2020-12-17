@@ -12,7 +12,7 @@ namespace Appointment_system_managment.Models
         public int Id { get; set; }
 
         public int ClinicId { get; set; }
-        public clinic clinic { get; set; }
+        public clinic Clinic { get; set; }
         public int Doctor_DetailID { get; set; }
         public doctor_detail Doctor_Detail { get; set; }
         public int Patient_DetailID { get; set; }
