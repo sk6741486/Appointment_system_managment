@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body>
+<!--code to change the background color of everypage-->
+<body style="background-color:cornflowerblue;">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -22,12 +23,16 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
+                            <!--the code use for navigation bar to show the all information about patient-->
                             <a class="nav-link text-dark" asp-area="" asp-page="/patient_details/Index">Patient</a>
                         <li class="nav-item">
+                            <!--the code for navigation bar to show all the information about doctor table-->
                             <a class="nav-link text-dark" asp-area="" asp-page="/doctor_details/Index">Doctor</a>
                         <li class="nav-item">
+                            <!--the code for  navigation bar to show the information aboutdiffrent clinics-->
                             <a class="nav-link text-dark" asp-area="" asp-page="/clinics/Index">Clinic</a>
                         <li class="nav-item">
+                            <!--the code for navigation bar to get the appointment from the doctor and this table also contain all forign keys-->
                             <a class="nav-link text-dark" asp-area="" asp-page="/appointments/Index">Appointment</a>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
